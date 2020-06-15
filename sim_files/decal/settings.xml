@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generated on 2020-06-15 08:47:03.215364 by tileGet.py v1_6_0+0399-26ad1f053b
+  options: -n sim_files/net/net.net.xml -t 10
+-->
+<viewsettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/viewsettings_file.xsd">
+    <decal file="tile33666_52701.jpeg" centerX="1133.8944364731433" centerY="1123.9494400019757" width="254.64955322048627" height="256.04999552853405" layer="0"/>
+    <decal file="tile33666_52702.jpeg" centerX="1132.598172468308" centerY="869.1986021869816" width="254.65628961124457" height="256.0565460221842" layer="0"/>
+    <decal file="tile33666_52703.jpeg" centerX="1131.3019543000846" centerY="614.4411682761274" width="254.66302577510942" height="256.06309626530856" layer="0"/>
+    <decal file="tile33666_52704.jpeg" centerX="1130.0057819779613" centerY="359.6771385092288" width="254.66976171184797" height="256.06964626256377" layer="0"/>
+    <decal file="tile33666_52705.jpeg" centerX="1128.709655511484" centerY="104.90651312330738" width="254.67649742157664" height="256.0761960102245" layer="0"/>
+    <decal file="tile33667_52701.jpeg" centerX="1389.8435989576974" centerY="1122.650399546139" width="254.65619796002284" height="256.0432276939973" layer="0"/>
+    <decal file="tile33667_52702.jpeg" centerX="1388.5540253887884" centerY="867.8996073398739" width="254.66293410479557" height="256.04977841395885" layer="0"/>
+    <decal file="tile33667_52703.jpeg" centerX="1387.2644974199357" centerY="613.1422190479934" width="254.669670022442" height="256.0563288824633" layer="0"/>
+    <decal file="tile33667_52704.jpeg" centerX="1385.9750150605687" centerY="358.37823490891606" width="254.67640571296215" height="256.06287910509855" layer="0"/>
+    <decal file="tile33667_52705.jpeg" centerX="1384.6855783201754" centerY="103.60765516106039" width="254.683141176356" height="256.0694290790707" layer="0"/>
+</viewsettings>
