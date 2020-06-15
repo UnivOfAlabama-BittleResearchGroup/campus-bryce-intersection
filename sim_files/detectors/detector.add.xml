@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 <!--Generated Detectors-->
 <additional>
-   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_NB_0_detect" lane="Bryce_NB_0" pos="-9.1"/>
-   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_NB_1_detect" lane="Bryce_NB_1" pos="-9.1"/>
+   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_NB_0_detect" lane="Bryce_NB_0" pos="-30.5"/>
+   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_NB_1_detect" lane="Bryce_NB_1" pos="-30.5"/>
    <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_NB_2_detect" lane="Bryce_NB_2" pos="-9.1"/>
-   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Campus_EB_0_detect" lane="Campus_EB_0" pos="-9.1"/>
+   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Campus_EB_0_detect" lane="Campus_EB_0" pos="-30.5"/>
    <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Campus_EB_1_detect" lane="Campus_EB_1" pos="-9.1"/>
-   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_SB_0_detect" lane="Bryce_SB_0" pos="-9.1"/>
-   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_SB_1_detect" lane="Bryce_SB_1" pos="-9.1"/>
+   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_SB_0_detect" lane="Bryce_SB_0" pos="-30.5"/>
+   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_SB_1_detect" lane="Bryce_SB_1" pos="-30.5"/>
    <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Bryce_SB_2_detect" lane="Bryce_SB_2" pos="-9.1"/>
-   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Campus_WB_1_detect" lane="Campus_WB_1" pos="-9.1"/>
+   <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Campus_WB_1_detect" lane="gneE1.93_1" pos="-9.0"/>
    <e1Detector file="_detect_OUTPUT_.xml" freq="1" id="Campus_WB_2_detect" lane="Campus_WB_2" pos="-9.1"/>
 </additional>
