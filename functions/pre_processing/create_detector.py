@@ -181,14 +181,23 @@ def generate_xml(net_dir=CONFIG.net_file,
     f.write(xml)
     f.close()
 
-    # Write the detector equivalencies for the traffic light logic document
-    xml_2 = doc_2.toprettyxml(indent='   ')
-    f_2 = open(tls_param_file_path, "w")
-    f_2.write(xml_2)
-    f_2.close()
+    if tls_param_file_path is not None:
+        # Write the detector equivalencies for the traffic light logic document
+        xml_2 = doc_2.toprettyxml(indent='   ')
+        f_2 = open(tls_param_file_path, "w")
+        f_2.write(xml_2)
+        f_2.close()
 
     print("Detectors generated successfully!")
 
 
 if __name__ == '__main__':
-    generate_xml()
+
+    generate_xml(net_dir=CONFIG.net_file,
+                 intersection_params=CONFIG.intersection_setup_file,
+                 detect_file_path=CONFIG.detector,
+                 tls_param_file_path=None,
+                 detector_output_file_name=var_def.DETECTOR_OUTPUT_NAME,
+                 detector_output_per_tls=False,
+                 detector_output_path=var_def.DETECTOR_OUTPUT_DIR_RELATIVE,
+                 freq='1')
