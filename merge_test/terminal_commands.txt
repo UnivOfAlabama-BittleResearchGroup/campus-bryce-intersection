@@ -1,0 +1,10 @@
+To Join the networks:
+
+netconvert -s C:\Users\spraychamber\PycharmProjects\campus-bryce-intersection\sim_files\net\net.net.xml,C:\Users\spraychamber\PycharmProjects\US69\03_sim_files\net\
+hwy69_improved_with_geo.net.xml -o merged.net.xml
+
+
+^^ Will likely fail the first time. I had to change the name of some elements. easy with find and replace in the xml document
+
+Tile server:
+
