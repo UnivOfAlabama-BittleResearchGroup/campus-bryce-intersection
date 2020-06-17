@@ -45,7 +45,7 @@ class CONFIG:
     #dual_ring_additional = os.path.join(var_def.TLS_LOGIC_DIR_ABSOLUTE, 'tls.add.xml')
 
     # The location and name of the vehicle description file:
-    #veh_description = os.path.join(var_def.VEH_DESCRIPT_DIR_ABSOLUTE, 'vTypeDistributions.add.xml')
+    veh_description = os.path.join(var_def.VEH_DESCRIPT_DIR_ABSOLUTE, 'vTypeDistributions.add.xml')
 
     # The location and name of the traffic light output file:
     tl_output_file = os.path.join(var_def.TLS_LOGIC_DIR_ABSOLUTE, 'tls_state_record.add.xml')
@@ -161,6 +161,10 @@ class CONFIG:
         elif method == "flowRouter":
             common_additional[1] = common_additional[1] + ", " + CONFIG.flow_route
             specific_string = ["-r", CONFIG.flow_flow] + common_additional
+
+        elif method == "randomRoutes":
+            common_additional[1] = common_additional[1]
+            specific_string = ["-r", CONFIG.random_route] + common_additional
 
         configuration_list = base_string + specific_string + time_string + emissions_string if emissions \
             else base_string + specific_string + time_string
