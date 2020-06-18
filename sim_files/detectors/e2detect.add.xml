@@ -1,14 +1,14 @@
 <?xml version="1.0" ?>
 <!--Generated Detectors-->
 <additional>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Bryce_NB_0_detect" lane="Bryce_NB_0" length="3.047999902464003" pos="5.0"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Bryce_NB_1_detect" lane="Bryce_NB_1" length="3.047999902464003" pos="5.0"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Bryce_NB_2_detect" lane="Bryce_NB_2" length="9.143999707392009" pos="20.3"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Campus_EB_0_detect" lane="Campus_EB_0" length="3.047999902464003" pos="0.2"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Campus_EB_1_detect" lane="Campus_EB_1" length="9.143999707392009" pos="15.5"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Bryce_SB_0_detect" lane="Bryce_SB_0" length="3.047999902464003" pos="38.4"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Bryce_SB_1_detect" lane="Bryce_SB_1" length="3.047999902464003" pos="38.4"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Bryce_SB_2_detect" lane="Bryce_SB_2" length="9.143999707392009" pos="53.7"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Campus_WB_1_detect" lane="gneE1.93_1" length="3.047999902464003" pos="0.6"/>
-   <laneAreaDetector file="_detect_OUTPUT_.xml" freq="1" friendlyPos="True" id="Campus_WB_2_detect" lane="Campus_WB_2" length="9.143999707392009" pos="3.0"/>
+   <laneAreaDetector id="Bryce_NB_0_detect" pos="5.7" lane="Bryce_NB_0" freq="1" friendlyPos="True" length="3.047999902464003" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Bryce_NB_1_detect" pos="5.7" lane="Bryce_NB_1" freq="1" friendlyPos="True" length="3.047999902464003" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Bryce_NB_2_detect" pos="30.1" lane="Bryce_NB_2" freq="1" friendlyPos="True" length="9.143999707392009" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Campus_EB_0_detect" pos="0.9" lane="Campus_EB_0" freq="1" friendlyPos="True" length="3.047999902464003" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Campus_EB_1_detect" pos="25.3" lane="Campus_EB_1" freq="1" friendlyPos="True" length="9.143999707392009" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Bryce_SB_0_detect" pos="38.4" lane="Bryce_SB_0" freq="1" friendlyPos="True" length="3.047999902464003" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Bryce_SB_1_detect" pos="38.4" lane="Bryce_SB_1" freq="1" friendlyPos="True" length="3.047999902464003" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Bryce_SB_2_detect" pos="62.8" lane="Bryce_SB_2" freq="1" friendlyPos="True" length="9.143999707392009" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Campus_WB_1_detect" pos="0.6" lane="gneE1.93_1" freq="1" friendlyPos="True" length="3.047999902464003" file="_detect_OUTPUT_.xml"/>
+   <laneAreaDetector id="Campus_WB_2_detect" pos="12.1" lane="Campus_WB_2" freq="1" friendlyPos="True" length="9.143999707392009" file="_detect_OUTPUT_.xml"/>
 </additional>
