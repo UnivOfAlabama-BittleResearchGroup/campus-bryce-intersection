@@ -32,6 +32,20 @@ class IntersectionParameters:
     def get_unique_tl(self):
         return map(str, self.df["tl"].unique())
 
+    def get_rw_index_by_light(self, traffic_light_id, main=True, dict=False):
+        local_df = self.df.loc[(self.df["ID"] == traffic_light_id)]
+
+        RW_DETECT = 'RW_Detector' if main else "RW_Detector_2"
+        SUMO_DETECT = "Sumo_Detector" if main else "Sumo_Detector_2"
+
+        local_df.sort_values(by=[RW_DETECT], ascending=False, inplace=True)
+        local_df = local_df[local_df[RW_DETECT].notna()]
+
+        if dict:
+            return {local_df.loc[idx, SUMO_DETECT]: local_df.loc[idx, RW_DETECT] for idx in local_df.index}
+        else:
+            return [list(local_df[SUMO_DETECT]), list(local_df[RW_DETECT])]
+
     def get_detectors_per_light(self, traffic_light_id):
         local_df = self.df.loc[(self.df["ID"] == int(traffic_light_id))]
         count_df = local_df.groupby('RW_Detector').size()

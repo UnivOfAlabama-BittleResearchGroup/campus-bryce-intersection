@@ -18,12 +18,12 @@ ROUTE_UNVERIFIED_NAME = 'unverified_routes.xml'
 FLOW_UNVERIFIED_NAME = "unverified_flow.xml"
 ROUTE_FILE_NAME = "routes.xml"
 FLOW_FILE_NAME = "trips.trips.xml"
-FRINGE_FACTOR = '10000'
-LANE_FACTOR = '1000'
-MIN_DISTANCE = '500'
+FRINGE_FACTOR = '10'
+LANE_FACTOR = '10'
+MIN_DISTANCE = '50'
 
 VEH_DISTR_FILE = CONFIG.veh_description
-PERIOD = 0.3
+PERIOD = 3
 SIM_LENGTH = str(3600)
 
 def run(validate,

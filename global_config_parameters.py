@@ -26,7 +26,7 @@ class CONFIG:
     # rw_data_csv = os.path.join(var_def.SQL_DATA_DIR_ABSOLUTE, '2020-02-05.csv')
 
     sim_length = 4 * 3600  # seconds
-    sim_step = 0.5  # seconds
+    sim_step = 0.2  # seconds
     #tl_ids = ['63069006', '63069007', '63069008', '63069009']
     tl_ids = ['tl_1']
     aggregation_period = 60
@@ -34,7 +34,8 @@ class CONFIG:
 
     # the location and name of the network file, detector, calibrator and probe files
     net_file = os.path.join(var_def.NET_FILE_DIR_ABSOLUTE, 'net.net.xml')
-    detector = var_def.DETECT_FILE_ABSOLUTE
+    # detector = var_def.DETECT_FILE_ABSOLUTE
+    detector = os.path.join(var_def.DETECT_DIR_ABSOLUTE, 'e2detect.add.xml')
     detector_socket = os.path.join(var_def.DETECT_DIR_ABSOLUTE, 'detector_socket.add.xml')
     calibrator = var_def.CALIBRATOR_FILE_ABSOLUTE
     probe = var_def.PROBE_FILE_ABSOLUTE
