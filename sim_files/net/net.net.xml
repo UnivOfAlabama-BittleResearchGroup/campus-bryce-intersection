@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 06/17/20 17:35:33 by Eclipse SUMO netedit Version v1_6_0+0521-bad558c3e9
+<!-- generated on 06/18/20 12:34:13 by Eclipse SUMO netedit Version v1_6_0+0521-bad558c3e9
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
 
     <input>
@@ -193,16 +193,13 @@
         <lane id=":tl_1_14_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.62" length="11.51" shape="1212.66,850.56 1211.70,849.86 1208.25,845.12 1208.33,840.67"/>
     </edge>
     <edge id=":tl_1_4" function="internal">
-        <lane id=":tl_1_4_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="8.60" length="16.29" shape="1220.31,845.91 1220.14,848.47 1221.82,851.13 1225.35,853.90 1230.73,856.76"/>
+        <lane id=":tl_1_4_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="8.59" length="16.34" shape="1220.27,845.89 1220.09,848.45 1221.77,851.11 1225.32,853.88 1230.73,856.76"/>
     </edge>
     <edge id=":tl_1_5" function="internal">
-        <lane id=":tl_1_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="16.70" length="21.65" shape="1217.38,844.63 1208.90,864.55"/>
+        <lane id=":tl_1_5_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="16.70" length="21.65" shape="1217.33,844.61 1208.90,864.55"/>
     </edge>
     <edge id=":tl_1_6" function="internal">
-        <lane id=":tl_1_6_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="10.83" length="10.61" shape="1214.45,843.35 1211.23,847.51 1206.20,849.35"/>
-    </edge>
-    <edge id=":tl_1_15" function="internal">
-        <lane id=":tl_1_15_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="10.83" length="15.93" shape="1206.20,849.35 1199.37,848.86 1190.73,846.06"/>
+        <lane id=":tl_1_6_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="10.85" length="26.47" shape="1214.40,843.33 1211.16,847.48 1206.13,849.31 1199.32,848.84 1190.73,846.06"/>
     </edge>
     <edge id=":tl_1_7" function="internal">
         <lane id=":tl_1_7_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="7.85" length="13.57" shape="1193.15,840.24 1197.70,841.78 1201.25,842.15 1203.82,841.35 1205.39,839.39"/>
@@ -213,8 +210,8 @@
     <edge id=":tl_1_9" function="internal">
         <lane id=":tl_1_9_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.52" length="14.10" shape="1191.92,843.19 1201.22,847.99 1203.97,850.38"/>
     </edge>
-    <edge id=":tl_1_16" function="internal">
-        <lane id=":tl_1_16_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.52" length="16.23" shape="1203.97,850.38 1207.14,853.15 1209.71,858.67 1208.90,864.55"/>
+    <edge id=":tl_1_15" function="internal">
+        <lane id=":tl_1_15_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.52" length="16.23" shape="1203.97,850.38 1207.14,853.15 1209.71,858.67 1208.90,864.55"/>
     </edge>
     <edge id=":tl_1_10" function="internal">
         <lane id=":tl_1_10_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="8.62" length="16.55" shape="1196.56,859.37 1197.62,855.05 1197.01,851.39 1194.71,848.39 1190.73,846.06"/>
@@ -224,10 +221,10 @@
         <lane id=":tl_1_11_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="16.70" length="21.83" shape="1199.51,860.61 1208.33,840.67"/>
     </edge>
     <edge id=":tl_1_13" function="internal">
-        <lane id=":tl_1_13_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.72" length="13.27" shape="1202.46,861.85 1206.57,855.80 1211.97,853.26"/>
+        <lane id=":tl_1_13_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.72" length="13.23" shape="1202.46,861.85 1206.57,855.80 1211.93,853.28"/>
     </edge>
-    <edge id=":tl_1_17" function="internal">
-        <lane id=":tl_1_17_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.72" length="19.43" shape="1211.97,853.26 1212.65,852.94 1220.70,853.26 1230.73,856.76"/>
+    <edge id=":tl_1_16" function="internal">
+        <lane id=":tl_1_16_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="11.72" length="19.47" shape="1211.93,853.28 1212.65,852.94 1220.70,853.26 1230.73,856.76"/>
     </edge>
 
     <edge id="-130611463#3" from="1438058596" to="1438058592" priority="1" type="highway.service">
@@ -447,14 +444,14 @@
         <param key="origFrom" value="5021341463"/>
         <param key="origTo" value="1438058589"/>
     </edge>
-    <edge id="Bryce_NB" from="cluster_5821898542_5821898543" to="tl_1" name="Peter Bryce Boulevard" priority="10" type="highway.tertiary" spreadType="center" shape="1230.52,813.53 1220.20,838.16 1218.20,842.75">
-        <lane id="Bryce_NB_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="39.27" shape="1235.60,809.68 1223.15,839.40 1220.31,845.91">
+    <edge id="Bryce_NB" from="cluster_5821898542_5821898543" to="tl_1" name="Peter Bryce Boulevard" priority="10" type="highway.tertiary" spreadType="center" shape="1230.52,813.53 1220.20,838.16 1216.45,846.60">
+        <lane id="Bryce_NB_0" index="0" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="39.27" shape="1235.60,809.68 1223.14,839.43 1220.27,845.89">
             <param key="origId" value="489389767"/>
         </lane>
-        <lane id="Bryce_NB_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="39.27" shape="1232.65,808.45 1220.20,838.16 1217.38,844.63">
+        <lane id="Bryce_NB_1" index="1" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="39.27" shape="1232.65,808.45 1220.20,838.16 1217.33,844.61">
             <param key="origId" value="489389767"/>
         </lane>
-        <lane id="Bryce_NB_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="39.27" shape="1229.70,807.22 1217.25,836.92 1214.45,843.35">
+        <lane id="Bryce_NB_2" index="2" disallow="tram rail_urban rail rail_electric rail_fast ship" speed="22.22" length="39.27" shape="1229.70,807.22 1217.26,836.89 1214.40,843.33">
             <param key="origId" value="489389767"/>
         </lane>
         <param key="origFrom" value="5821898542"/>
@@ -591,14 +588,14 @@
         <request index="1" response="000" foes="000" cont="0"/>
         <request index="2" response="000" foes="000" cont="0"/>
     </junction>
-    <junction id="tl_1" type="traffic_light" x="1208.65" y="851.21" incLanes="Campus_WB_0 Campus_WB_1 Campus_WB_2 510789150#7_0 Bryce_NB_0 Bryce_NB_1 Bryce_NB_2 207109514#1_0 Campus_EB_0 Campus_EB_1 Bryce_SB_0 Bryce_SB_1 Bryce_SB_2" intLanes=":tl_1_0_0 :tl_1_1_0 :tl_1_2_0 :tl_1_14_0 :tl_1_4_0 :tl_1_5_0 :tl_1_15_0 :tl_1_7_0 :tl_1_8_0 :tl_1_16_0 :tl_1_10_0 :tl_1_11_0 :tl_1_11_1 :tl_1_17_0" shape="1225.78,867.47 1231.40,855.30 1229.24,854.18 1227.57,853.04 1226.39,851.89 1225.70,850.71 1225.51,849.52 1225.80,848.31 1199.27,836.71 1197.94,838.58 1197.09,839.07 1196.11,839.26 1195.00,839.16 1193.77,838.76 1190.12,847.53 1191.79,849.24 1192.03,850.61 1191.87,852.32 1191.31,854.38 1190.36,856.77 1217.32,868.08 1218.95,866.37 1220.21,866.08 1221.77,866.17 1223.63,866.63">
+    <junction id="tl_1" type="traffic_light" x="1208.65" y="851.21" incLanes="Campus_WB_0 Campus_WB_1 Campus_WB_2 510789150#7_0 Bryce_NB_0 Bryce_NB_1 Bryce_NB_2 207109514#1_0 Campus_EB_0 Campus_EB_1 Bryce_SB_0 Bryce_SB_1 Bryce_SB_2" intLanes=":tl_1_0_0 :tl_1_1_0 :tl_1_2_0 :tl_1_14_0 :tl_1_4_0 :tl_1_5_0 :tl_1_6_0 :tl_1_7_0 :tl_1_8_0 :tl_1_15_0 :tl_1_10_0 :tl_1_11_0 :tl_1_11_1 :tl_1_16_0" shape="1225.78,867.47 1231.40,855.30 1229.24,854.18 1227.57,853.04 1226.39,851.89 1225.70,850.71 1225.51,849.52 1225.80,848.31 1199.27,836.71 1197.94,838.58 1197.09,839.07 1196.11,839.26 1195.00,839.16 1193.77,838.76 1190.12,847.53 1191.79,849.24 1192.03,850.61 1191.87,852.32 1191.31,854.38 1190.36,856.77 1217.32,868.08 1218.95,866.37 1220.21,866.08 1221.77,866.17 1223.63,866.63">
         <request index="0"  response="00000000100000" foes="00001000100000" cont="0"/>
         <request index="1"  response="00000000100000" foes="00001000100000" cont="0"/>
         <request index="2"  response="11110001100000" foes="11111001100000" cont="0"/>
         <request index="3"  response="11100101100000" foes="11100101100000" cont="1"/>
         <request index="4"  response="00000000000000" foes="10000100000000" cont="0"/>
         <request index="5"  response="00001000001000" foes="10001100001111" cont="0"/>
-        <request index="6"  response="01111000001000" foes="01111100001100" cont="1"/>
+        <request index="6"  response="01111000001000" foes="01111100001100" cont="0"/>
         <request index="7"  response="01100000000000" foes="01100000000000" cont="0"/>
         <request index="8"  response="11100001110000" foes="11100001111000" cont="0"/>
         <request index="9"  response="11100001100111" foes="11100001100111" cont="1"/>
@@ -611,9 +608,8 @@
     <junction id=":1039680317_4_0" type="internal" x="1406.92" y="936.14" incLanes=":1039680317_1_0 -434396602_0" intLanes=":1039680317_2_0"/>
     <junction id=":1039680317_5_0" type="internal" x="1409.87" y="937.37" incLanes=":1039680317_3_0 434396594_0" intLanes=":1039680317_0_0"/>
     <junction id=":tl_1_14_0" type="internal" x="1212.66" y="850.56" incLanes=":tl_1_3_0 Campus_EB_0" intLanes=":tl_1_5_0 :tl_1_6_0 :tl_1_7_0 :tl_1_8_0 :tl_1_11_0 :tl_1_11_1 :tl_1_13_0"/>
-    <junction id=":tl_1_15_0" type="internal" x="1206.20" y="849.35" incLanes=":tl_1_6_0 Bryce_SB_0 Bryce_SB_1" intLanes=":tl_1_2_0 :tl_1_3_0 :tl_1_8_0 :tl_1_9_0 :tl_1_10_0 :tl_1_11_0 :tl_1_11_1"/>
-    <junction id=":tl_1_16_0" type="internal" x="1203.97" y="850.38" incLanes=":tl_1_9_0 Campus_WB_0 Campus_WB_1" intLanes=":tl_1_0_0 :tl_1_1_0 :tl_1_2_0 :tl_1_5_0 :tl_1_6_0 :tl_1_11_0 :tl_1_11_1 :tl_1_13_0"/>
-    <junction id=":tl_1_17_0" type="internal" x="1211.97" y="853.26" incLanes=":tl_1_13_0 Bryce_NB_0 Bryce_NB_1" intLanes=":tl_1_2_0 :tl_1_3_0 :tl_1_4_0 :tl_1_5_0 :tl_1_8_0 :tl_1_9_0"/>
+    <junction id=":tl_1_15_0" type="internal" x="1203.97" y="850.38" incLanes=":tl_1_9_0 Campus_WB_0 Campus_WB_1" intLanes=":tl_1_0_0 :tl_1_1_0 :tl_1_2_0 :tl_1_5_0 :tl_1_6_0 :tl_1_11_0 :tl_1_11_1 :tl_1_13_0"/>
+    <junction id=":tl_1_16_0" type="internal" x="1211.93" y="853.28" incLanes=":tl_1_13_0 Bryce_NB_0 Bryce_NB_1" intLanes=":tl_1_2_0 :tl_1_3_0 :tl_1_4_0 :tl_1_5_0 :tl_1_8_0 :tl_1_9_0"/>
 
     <connection from="-130611463#3" to="130611463#3" fromLane="0" toLane="0" via=":1438058592_0_0" dir="t" state="="/>
     <connection from="-130611469#6" to="-130611463#3" fromLane="0" toLane="0" via=":1438058596_2_0" dir="r" state="="/>
@@ -719,16 +715,15 @@
     <connection from=":tl_1_14" to="8873021#1" fromLane="0" toLane="1" dir="l" state="M"/>
     <connection from=":tl_1_4" to="gneE0_bryce" fromLane="0" toLane="0" dir="r" state="M"/>
     <connection from=":tl_1_5" to="-516481997#1" fromLane="0" toLane="1" dir="s" state="M"/>
-    <connection from=":tl_1_6" to="434543207#1" fromLane="0" toLane="0" via=":tl_1_15_0" dir="l" state="m"/>
-    <connection from=":tl_1_15" to="434543207#1" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":tl_1_6" to="434543207#1" fromLane="0" toLane="0" dir="l" state="M"/>
     <connection from=":tl_1_7" to="8873021#1" fromLane="0" toLane="0" dir="r" state="M"/>
     <connection from=":tl_1_8" to="gneE0_bryce" fromLane="0" toLane="0" dir="s" state="M"/>
-    <connection from=":tl_1_9" to="-516481997#1" fromLane="0" toLane="1" via=":tl_1_16_0" dir="l" state="m"/>
-    <connection from=":tl_1_16" to="-516481997#1" fromLane="0" toLane="1" dir="l" state="M"/>
+    <connection from=":tl_1_9" to="-516481997#1" fromLane="0" toLane="1" via=":tl_1_15_0" dir="l" state="m"/>
+    <connection from=":tl_1_15" to="-516481997#1" fromLane="0" toLane="1" dir="l" state="M"/>
     <connection from=":tl_1_10" to="434543207#1" fromLane="0" toLane="0" dir="r" state="M"/>
     <connection from=":tl_1_11" to="8873021#1" fromLane="0" toLane="0" dir="s" state="M"/>
     <connection from=":tl_1_11" to="8873021#1" fromLane="1" toLane="1" dir="s" state="M"/>
-    <connection from=":tl_1_13" to="gneE0_bryce" fromLane="0" toLane="0" via=":tl_1_17_0" dir="l" state="m"/>
-    <connection from=":tl_1_17" to="gneE0_bryce" fromLane="0" toLane="0" dir="l" state="M"/>
+    <connection from=":tl_1_13" to="gneE0_bryce" fromLane="0" toLane="0" via=":tl_1_16_0" dir="l" state="m"/>
+    <connection from=":tl_1_16" to="gneE0_bryce" fromLane="0" toLane="0" dir="l" state="M"/>
 
 </net>

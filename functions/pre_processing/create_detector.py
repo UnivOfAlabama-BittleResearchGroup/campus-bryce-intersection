@@ -289,21 +289,32 @@ def generate_e2(net_dir=CONFIG.net_file,
                 detect_element = doc.createElement('laneAreaDetector')
                 detect_element.setAttribute('id', detect[0])
 
-                length = net.getLane(local_lane[lane_index]).getLength()
-                # 1/3.28084 is the conversion from feet to meters
-                offset = round(-1 * detect[1] / 3.28084, 1)
-                # search backward via connecting lanes for a location the specified distance back
-                while length < (detect[1] / 3.28084):
-                    next_lane = net.getLane(local_lane[lane_index]).getIncoming()
-                    local_lane[lane_index] = next_lane[0].getID()
-                    offset = length - (variable_df.Detector_Distance[i] / 3.28084)
-                    length += net.getLane(local_lane[lane_index]).getLength()
+                length, length_wo_junction = get_lane_lengths(net, local_lane[lane_index], first=True)
+                difference = length - length_wo_junction
+
+                if detect[1] != 0:
+
+                    # 1/3.28084 is the conversion from feet to meters
+                    offset = round(-1 * detect[1] / 3.28084, 1)
+                    # search backward via connecting lanes for a location the specified distance back
+                    while length < (detect[1] / 3.28084):
+                        next_lane = net.getLane(local_lane[lane_index]).getIncoming()
+                        local_lane[lane_index] = next_lane[0].getID()
+                        local_length, length_wo_junction = get_lane_lengths(net, local_lane[lane_index], first=False)
+                        difference = length - length_wo_junction
+                        length += local_length
+
+                    offset = length - (variable_df.Detector_Distance[i] / 3.28084) - difference
+
+                    if abs(offset) > length_wo_junction:
+                        print(f"Detector {detect[0]} wants to be placed on a junction")
+                else:
+                    offset = net.getLane(local_lane[lane_index]).getLength()
 
                 detector_length = variable_df.Detector_Length[i] / 3.28084 if not secondary_detector else \
                     variable_df.Detector_2_Length[i] / 3.28084
 
-                detect_element.setAttribute('pos', str(round(offset + net.getLane(local_lane[lane_index]).getLength() - \
-                                                             detector_length, 1)))
+                detect_element.setAttribute('pos', str(round(offset - detector_length, 1)))
                 detect_element.setAttribute('lane', local_lane[lane_index])
                 detect_element.setAttribute('freq', freq)
                 detect_element.setAttribute('friendlyPos', 'True')
@@ -354,6 +365,23 @@ def generate_e2(net_dir=CONFIG.net_file,
         f_2.close()
 
     print("Detectors generated successfully!")
+
+
+def get_lane_lengths(net, lane, first=False):
+
+    # include the stop bar or not
+    if first:
+        shape_index = 2
+    else:
+        shape_index = 3
+
+    shape_w_junc = net.getLane(lane).getShape(includeJunctions=True)
+    shape_wo_junc = net.getLane(lane).getShape(includeJunctions=False)
+    length = ((shape_w_junc[0][0] - shape_w_junc[shape_index][0]) ** 2 + (shape_w_junc[0][1]
+                                                                - shape_w_junc[shape_index][1]) ** 2) ** (1 / 2)
+    length_wo_junction = ((shape_wo_junc[0][0] - shape_wo_junc[1][0]) ** 2 + (shape_wo_junc[0][1]
+                                                                              - shape_wo_junc[1][1]) ** 2) ** (1 / 2)
+    return length, length_wo_junction
 
 
 if __name__ == '__main__':
