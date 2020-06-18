@@ -5,4 +5,4 @@ xlrd
 openpyxl
 lxml
 pysnmp
-jupyter notebook
+jupyter-notebook
