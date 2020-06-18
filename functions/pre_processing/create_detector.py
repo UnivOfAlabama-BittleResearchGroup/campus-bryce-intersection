@@ -126,16 +126,18 @@ def generate_e1(net_dir=CONFIG.net_file,
 
                 detect_element = doc.createElement('e1Detector')
                 detect_element.setAttribute('id', detect[0])
-
-                length = net.getLane(local_lane[lane_index]).getLength()
-                # 1/3.28084 is the conversion from feet to meters
-                offset = str(round(-1 * detect[1] / 3.28084, 1))
-                # search backward via connecting lanes for a location the specified distance back
-                while length < (detect[1] / 3.28084):
-                    next_lane = net.getLane(local_lane[lane_index]).getIncoming()
-                    local_lane[lane_index] = next_lane[0].getID()
-                    offset = str(round(length - (variable_df.Detector_Distance[i] / 3.28084)))
-                    length += net.getLane(local_lane[lane_index]).getLength()
+                if detect[1] != 0:
+                    length = net.getLane(local_lane[lane_index]).getLength()
+                    # 1/3.28084 is the conversion from feet to meters
+                    offset = str(round(-1 * detect[1] / 3.28084, 1))
+                    # search backward via connecting lanes for a location the specified distance back
+                    while length < (detect[1] / 3.28084):
+                        next_lane = net.getLane(local_lane[lane_index]).getIncoming()
+                        local_lane[lane_index] = next_lane[0].getID()
+                        offset = str(round(length - (variable_df.Detector_Distance[i] / 3.28084)))
+                        length += net.getLane(local_lane[lane_index]).getLength()
+                else:
+                    offset = str(net.getLane(local_lane[lane_index]).getLength())
 
                 detect_element.setAttribute('pos', offset)
                 detect_element.setAttribute('lane', local_lane[lane_index])
@@ -285,27 +287,18 @@ def generate_e2(net_dir=CONFIG.net_file,
                 populated = True
 
             if populated:
-
                 detect_element = doc.createElement('laneAreaDetector')
                 detect_element.setAttribute('id', detect[0])
 
                 length, length_wo_junction = get_lane_lengths(net, local_lane[lane_index], first=True)
-                difference = length - length_wo_junction
-
+                offset = length - (detect[1] / 3.28084)
                 if detect[1] != 0:
-
-                    # 1/3.28084 is the conversion from feet to meters
-                    offset = round(-1 * detect[1] / 3.28084, 1)
                     # search backward via connecting lanes for a location the specified distance back
-                    while length < (detect[1] / 3.28084):
+                    while offset < 0:
                         next_lane = net.getLane(local_lane[lane_index]).getIncoming()
                         local_lane[lane_index] = next_lane[0].getID()
                         local_length, length_wo_junction = get_lane_lengths(net, local_lane[lane_index], first=False)
-                        difference = length - length_wo_junction
-                        length += local_length
-
-                    offset = length - (variable_df.Detector_Distance[i] / 3.28084) - difference
-
+                        offset = local_length + offset
                     if abs(offset) > length_wo_junction:
                         print(f"Detector {detect[0]} wants to be placed on a junction")
                 else:
@@ -368,19 +361,27 @@ def generate_e2(net_dir=CONFIG.net_file,
 
 
 def get_lane_lengths(net, lane, first=False):
-
     # include the stop bar or not
-    if first:
-        shape_index = 2
-    else:
-        shape_index = 3
-
+    # if first:
+    #     shape_index = 2
+    # else:
+    #     shape_index = 3
     shape_w_junc = net.getLane(lane).getShape(includeJunctions=True)
     shape_wo_junc = net.getLane(lane).getShape(includeJunctions=False)
-    length = ((shape_w_junc[0][0] - shape_w_junc[shape_index][0]) ** 2 + (shape_w_junc[0][1]
-                                                                - shape_w_junc[shape_index][1]) ** 2) ** (1 / 2)
-    length_wo_junction = ((shape_wo_junc[0][0] - shape_wo_junc[1][0]) ** 2 + (shape_wo_junc[0][1]
-                                                                              - shape_wo_junc[1][1]) ** 2) ** (1 / 2)
+
+    length = 0
+    length_wo_junction = 0
+
+    start_ind = 1 if first else 0
+    # if the first lane uses 0 as index it will include the distance to the center of the
+    # signalized intersection
+
+    for i in range(start_ind, len(shape_w_junc)-1):
+        length += ((shape_w_junc[i][0] - shape_w_junc[i+1][0]) ** 2 + (
+                shape_w_junc[i][1] - shape_w_junc[i+1][1]) ** 2) ** (1 / 2)
+    for i in range(len(shape_wo_junc)-1):
+        length_wo_junction += ((shape_wo_junc[i][0] - shape_wo_junc[i + 1][0]) ** 2 + (
+                    shape_wo_junc[i][1] - shape_wo_junc[i + 1][1]) ** 2) ** (1 / 2)
     return length, length_wo_junction
 
 
