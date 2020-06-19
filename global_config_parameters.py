@@ -26,7 +26,7 @@ class CONFIG:
     # rw_data_csv = os.path.join(var_def.SQL_DATA_DIR_ABSOLUTE, '2020-02-05.csv')
 
     sim_length = 4 * 3600  # seconds
-    sim_step = 0.2  # seconds
+    sim_step = 0.1  # seconds
     #tl_ids = ['63069006', '63069007', '63069008', '63069009']
     tl_ids = ['tl_1']
     aggregation_period = 60

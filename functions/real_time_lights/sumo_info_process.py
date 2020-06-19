@@ -15,12 +15,12 @@ class DetectorProcess:
                 binary_list[8 - int(self.IDS[1][i])] = "1"
                 # print(f"Call to detector {self.IDS[1][i]}")
         # check if there was a difference since last time:
-        if set(binary_list) ^ set(self._binary_list_last):
-            if "1" in binary_list:
-                detect_binary = "".join(binary_list)
-                # print(detect_on)
-                # print('%0*X' % ((len(detect_on) + 3) // 4, int(detect_on, 2)))
-                hex_string = '%0*X' % ((len(detect_binary) + 3) // 4, int(detect_binary, 2))
+        #if set(binary_list) ^ set(self._binary_list_last):
+        if "1" in binary_list:
+            detect_binary = "".join(binary_list)
+            # print(detect_on)
+            # print('%0*X' % ((len(detect_on) + 3) // 4, int(detect_on, 2)))
+            hex_string = '%0*X' % ((len(detect_binary) + 3) // 4, int(detect_binary, 2))
         self._binary_list_last = binary_list
         return hex_string
 

@@ -52,36 +52,6 @@ def run(detector_rw_index):
     sys.stdout.flush()
 
 
-# def get_occupancy(IDS):
-#
-#     binary_list = ["0"] * 8
-#
-#     for i, ID in enumerate(IDS[0]):
-#         if traci.lanearea.getLastStepOccupancy(ID) > 0.01:
-#             binary_list[8 - int(IDS[1][i])] = "1"
-#             print(f"Call to detector {IDS[1][i]}")
-#
-#     detect_on = "".join(binary_list)
-#
-#     if "1" in detect_on:
-#         print(detect_on)
-#         print('%0*X' % ((len(detect_on) + 3) // 4, int(detect_on, 2)))
-#         return '%0*X' % ((len(detect_on) + 3) // 4, int(detect_on, 2))
-#     else:
-#         return None
-
-# def send_detectors(hex_string):
-#
-#     next(
-#         setCmd(SnmpEngine(),
-#                CommunityData('public', mpModel=0),
-#                UdpTransportTarget((IP, PORT)),
-#                ContextData(),
-#                ObjectType(ObjectIdentity('1.3.6.1.4.1.1206.3.5.2.19.8.2.1'), OctetString(hexValue=hex_string))
-#                )
-#     )
-
-
 def index_detectors(intersection_setup_file):
 
     parameters = IntersectionParameters()
