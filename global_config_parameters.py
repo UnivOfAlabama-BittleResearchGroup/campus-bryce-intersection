@@ -61,6 +61,7 @@ class CONFIG:
 
     intersection_setup_file = os.path.join(var_def.INTERSECTION_PARAMETERS_ABS, 'intersection_setup_file.xlsx')
     tl_phase_description = os.path.join(var_def.INTERSECTION_PARAMETERS_ABS, 'traffic_light_phasing.xlsx')
+    intersection_phasing_file = os.path.join(var_def.INTERSECTION_PARAMETERS_ABS, 'tl_settings.txt')
 
     # emissions output file
     emissions_output_socket = '127.0.0.1:65433'  # var_def.EMISSIONS_OUTPUT_FILE_ABS

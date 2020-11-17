@@ -4,6 +4,5 @@ numpy
 xlrd
 openpyxl
 lxml
-pysnmp
 jupyterlab
 notebook
