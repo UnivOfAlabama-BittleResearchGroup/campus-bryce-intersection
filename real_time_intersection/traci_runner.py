@@ -51,13 +51,19 @@ def index_detectors(intersection_setup_file):
 
 
 if __name__ == "__main__":
+
     detect_rw_index = index_detectors(intersection_setup_file=CONFIG.intersection_setup_file)
+
     command_line_list = CONFIG.get_cmd_line_list(method='randomRoutes',
                                                  sim_length=CONFIG.sim_length,
                                                  sim_step=CONFIG.sim_step,
                                                  emissions=False,
                                                  dual_ring_lights=False)
+
     sil_tl_manager = SILLightManager(CONFIG.intersection_phasing_file)
+
     traci.start([sumoBinary] + command_line_list)
+
     snmp_client = SNMP(ip=IP, port=PORT, light_control=True)
+
     run(detect_rw_index, snmp_client, sil_tl_manager)
