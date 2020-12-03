@@ -12,8 +12,8 @@ import pandas as pd
 
 import definitions as var_def
 from global_config_parameters import CONFIG
-from sumo_function_library.SQL.rw_traffic_data import RWTrafficData
-from sumo_function_library.functions.post_processing import xml_parse
+# from functions.SQL.rw_traffic_data import RWTrafficData
+from functions.post_processing import xml_parse
 
 """This statement below is necessary if using SUMOs xml2csv converter"""
 # # adding the location of sumo/tools/xml to the path

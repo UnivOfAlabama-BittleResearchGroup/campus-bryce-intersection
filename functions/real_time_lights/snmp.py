@@ -5,7 +5,7 @@ from multiprocessing import Process, Queue, Event
 oid_SET_DETECTOR_CALL = '1.3.6.1.4.1.1206.3.5.2.19.8.2.1'
 oid_GET_GREEN_CALL = '1.3.6.1.4.1.1206.4.2.1.1.4.1.4.1'
 oid_GET_YELLOW_CALL = '1.3.6.1.4.1.1206.4.2.1.1.4.1.3.1'
-
+oid_asc3DataLogEnable = '1.3.6.1.4.1.1206.3.5.2.9.17.1'
 GET_RATE = 0.5
 
 
@@ -49,6 +49,9 @@ class SNMP:
             self._p = self._spawn_mp()
             # self._t = self._spawn_threads()
 
+    def kill_threads(self):
+        self._kill_thread()
+
     def send_detectors(self, hex_string):
         print("sending ", hex_string)
         cmd_string = "".join(["snmpset -v 1 -c public ", str(self.IP), ":", str(self.PORT), " ",
@@ -80,3 +83,10 @@ class SNMP:
 
     def get_light_states(self):
         return {'tl_1': self._check_threads()}
+
+    def set_recording(self, state):
+        # This doesn't work, will have to manually set
+        value = 1 if state == 'enable' else 2
+        cmd_string = "".join(["snmpset -v 1 -c public ", str(self.IP), ":", str(self.PORT), " ",
+                              oid_asc3DataLogEnable, " x ", str(value)])
+        subprocess.check_output(cmd_string.split())

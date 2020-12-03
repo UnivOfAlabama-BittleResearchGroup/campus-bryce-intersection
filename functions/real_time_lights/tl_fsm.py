@@ -237,9 +237,11 @@ class DualRingTL:
         return self._get_light_string()
 
     def forcibly_change_light(self, desired_action, sim_time):
+        state_name = []
         for phase, color in desired_action:
             self.light_heads[phase].force_transition(color, sim_time)
-        return self._get_light_string()
+            state_name.append('-'.join([str(phase + 1), color]))
+        return "+".join(state_name), self._get_light_string()
 
 
     def _force_all_red(self, time):
@@ -476,7 +478,9 @@ class SILLightManager:
         for item in state_dict.items():
             if item[1]:
                 # self.traffic_lights[item[0]]._force_all_red(sim_time)
-                light_strings[item[0]] = self.traffic_lights[item[0]].forcibly_change_light(item[1], sim_time)
+                light_strings[item[0]] = {}
+                light_strings[item[0]]['name'], light_strings[item[0]]['data'] = \
+                    self.traffic_lights[item[0]].forcibly_change_light(item[1], sim_time)
         return light_strings
 
     @staticmethod
