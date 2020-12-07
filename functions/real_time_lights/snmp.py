@@ -56,7 +56,8 @@ class SNMP:
         print("sending ", hex_string)
         cmd_string = "".join(["snmpset -v 1 -c public ", str(self.IP), ":", str(self.PORT), " ",
                               oid_SET_DETECTOR_CALL, " x ", hex_string])
-        subprocess.check_output(cmd_string.split())
+        x = subprocess.check_output(cmd_string.split())
+        print(x)
 
     def _spawn_mp(self):
         p = Process(target=_threaded_get, args=(self.IP, self.PORT, self._queue, self._kill_event))

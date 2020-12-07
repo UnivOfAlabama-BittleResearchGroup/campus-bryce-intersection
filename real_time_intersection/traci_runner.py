@@ -57,23 +57,32 @@ def process_asc3_output(start_datetime, end_datetime):
         # recursion! yay!
         return process_asc3_output(start_datetime, end_datetime)
 
+
+def decode_hex(hex):
+    binary = "{0:08b}".format(int(hex, 16))
+    return binary
+
+
 def run(sim_length, detector_rw_index, snmp_client, tl_manager):
     detector_processor = DetectorProcess(traci=traci, IDS=detector_rw_index)
     sim_time = 0
     light_states = []
+    detector_states = []
     start_time = datetime.now()
     # snmp_client.set_recording('enable')
     while sim_time < sim_length:
         t0 = time.time()
         hex_string = detector_processor.get_occupancy()
+        step_time = (start_time + timedelta(seconds=float(sim_time))).strftime('%Y-%m-%d %H:%M:%S.%f')
         if hex_string:
             snmp_client.send_detectors(hex_string)
+            detector_states.append([step_time, decode_hex(hex_string)])
         state_dict = snmp_client.get_light_states()
         tl_dict = tl_manager.get_light_strings(state_dict=state_dict, sim_time=sim_time)
         for item in tl_dict.items():
             if item[1]:
                 traci.trafficlight.setRedYellowGreenState(item[0], item[1]['data'])
-                light_states.append([f'{datetime.now():%Y-%m-%d %H:%M:%S.%f}', item[0], item[1]['name']])
+                light_states.append([step_time, item[0], item[1]['name']])
         # sim step
         traci.simulationStep()
         sim_time += CONFIG.sim_step
@@ -84,7 +93,7 @@ def run(sim_length, detector_rw_index, snmp_client, tl_manager):
     snmp_client.kill_threads()  # want to cleanly kill the threads that are running i
     traci.close()
     sys.stdout.flush()
-    return start_time, end_time, light_states
+    return start_time, end_time, light_states, detector_states
 
 
 def index_detectors(intersection_setup_file):
@@ -103,6 +112,17 @@ def dump_light_states(light_state_list):
     with file:
         write = csv.writer(file)
         write.writerows(light_state_list)
+
+
+def dump_detector_logs(detector_list):
+    import csv
+    # opening the csv file in 'a+' mode
+    file = open(os.path.join(definitions.DETECT_DIR_ABS, 'detector_states_tl.csv'), 'w+', newline='')
+    # writing the data into the file
+    with file:
+        write = csv.writer(file)
+        write.writerows(detector_list)
+
 
 if __name__ == "__main__":
 
@@ -123,11 +143,13 @@ if __name__ == "__main__":
 
     snmp_client = SNMP(ip=IP, port=PORT, light_control=True)
 
-    start_dt, end_dt, light_states = run(CONFIG.sim_length, detect_rw_index, snmp_client, sil_tl_manager)
+    start_dt, end_dt, light_states, detector_states = run(CONFIG.sim_length, detect_rw_index, snmp_client, sil_tl_manager)
 
     file_list = process_asc3_output(start_datetime=start_dt, end_datetime=end_dt)
 
     dump_light_states(light_states)
+
+    dump_detector_logs(detector_states)
 
     df = ParseDetectorXML().main(file_path=CONFIG.detector_output_file, save_path=None, detect_type='e2')
 
