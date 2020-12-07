@@ -73,7 +73,8 @@ def run(sim_length, detector_rw_index, snmp_client, tl_manager):
     while sim_time < sim_length:
         t0 = time.time()
         hex_string = detector_processor.get_occupancy()
-        step_time = (start_time + timedelta(seconds=float(sim_time))).strftime('%Y-%m-%d %H:%M:%S.%f')
+        # step_time = (start_time + timedelta(seconds=float(sim_time))).strftime('%Y-%m-%d %H:%M:%S.%f')
+        step_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
         if hex_string:
             snmp_client.send_detectors(hex_string)
             detector_states.append([step_time, decode_hex(hex_string)])
@@ -90,6 +91,7 @@ def run(sim_length, detector_rw_index, snmp_client, tl_manager):
         dt = (time.time() - t0)
         time.sleep(max(CONFIG.sim_step - dt, 0))
     end_time = datetime.now()
+    print(end_time)
     snmp_client.kill_threads()  # want to cleanly kill the threads that are running i
     traci.close()
     sys.stdout.flush()
@@ -130,6 +132,8 @@ if __name__ == "__main__":
     detect_rw_index = index_detectors(intersection_setup_file=CONFIG.intersection_setup_file)
 
     CONFIG.sim_length = 300
+
+    CONFIG.sim_step = 0.5
 
     command_line_list = CONFIG.get_cmd_line_list(method='randomRoutes',
                                                  sim_length=CONFIG.sim_length,
