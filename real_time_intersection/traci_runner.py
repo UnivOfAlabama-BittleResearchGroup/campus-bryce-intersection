@@ -133,7 +133,7 @@ if __name__ == "__main__":
 
     CONFIG.sim_length = 300
 
-    CONFIG.sim_step = 0.5
+    CONFIG.sim_step = 0.1
 
     command_line_list = CONFIG.get_cmd_line_list(method='randomRoutes',
                                                  sim_length=CONFIG.sim_length,
