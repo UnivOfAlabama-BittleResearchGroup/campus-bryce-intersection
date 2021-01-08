@@ -1,0 +1,7 @@
+<configuration>
+    <input>
+        <net-file value="net/net.net.xml"/>
+        <route-files value="flow_routes/routes.xml"/>
+        <additional-files value="tl_logic/dual_ring_helper.xml"/>
+    </input>
+</configuration>
