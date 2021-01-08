@@ -1,0 +1,1 @@
+python3 /home/max/SUMO/sumo-git/tools/tls_buildTransitions.py -d /home/max/SUMO/campus-bryce-intersection/sim_files/tl_logic/dual_ring_helper.xml -o output.tls.xml
