@@ -1,0 +1,25 @@
+<add>
+    <tlLogic id="tl_1" offset="0" programID="1" type="actuated">
+        <phase duration="99" maxDur="60" minDur="5" name="1+5" next="10 8 9" state="srrsrrGsrrsrrG"/>
+        <phase duration="99" maxDur="60" minDur="5" name="1+6" next="11" state="srrsrrGGGrsrrr"/>
+        <phase duration="99" maxDur="60" minDur="5" name="2+5" next="12" state="GGGrrsrrrrsrrr"/>
+        <phase duration="99" maxDur="60" minDur="5" name="2+6" next="13" state="GGgsrrGGgrsrrr"/>
+        <phase duration="99" maxDur="60" minDur="5" name="3+7" next="16 14 15" state="srrsrrGsrrsrrG"/>
+        <phase duration="99" maxDur="60" minDur="5" name="3+8" next="17" state="srrgGGGsrrsrrr"/>
+        <phase duration="99" maxDur="60" minDur="5" name="4+7" next="18" state="srrsrrrsrrgGGG"/>
+        <phase duration="99" maxDur="60" minDur="5" name="4+8" next="19" state="srrgGGrsrrgGGr"/>
+        <phase duration="3" name="1+5-1+6" next="1" state="srrsrrGsrrsrry"/>
+        <phase duration="3" name="1+5-2+5" next="2" state="srrsrrysrrsrry"/>
+        <phase duration="3" name="1+5-2+6" next="3" state="srrsrrGsrrsrry"/>
+        <phase duration="3" name="1+6-2+6" next="3" state="srrsrrGGGrsrrr"/>
+        <phase duration="3" name="2+5-2+6" next="3" state="GGGrrsrrrrsrrr"/>
+        <phase duration="3" name="2+6-3+7" next="4" state="GyysrrGGyrsrrr"/>
+        <phase duration="3" name="3+7-3+8" next="5" state="srrsrrGsrrsrry"/>
+        <phase duration="3" name="3+7-4+7" next="6" state="srrsrrysrrsrrG"/>
+        <phase duration="3" name="3+7-4+8" next="7" state="srrsrrysrrsrry"/>
+        <phase duration="3" name="3+8-4+8" next="7" state="srrgGGysrrsrrr"/>
+        <phase duration="3" name="4+7-4+8" next="7" state="srrsrrrsrrgGGy"/>
+        <phase duration="3" name="4+8-1+5" next="0" state="srrgyyrsrrgyyr"/>
+    </tlLogic>
+
+</add>
