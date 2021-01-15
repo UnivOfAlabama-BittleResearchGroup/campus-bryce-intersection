@@ -2,6 +2,7 @@ import os
 import sys
 import time
 import definitions
+import subprocess
 from sumolib import checkBinary  # noqa
 import traci  # noqa
 
@@ -62,3 +63,5 @@ if __name__ == "__main__":
 
     # run the simulation
     run(SIM_LENGTH, STEP_LENGTH, real_time=True)
+    
+    subprocess.run([os.path.join(os.environ['SUMO_HOME'], 'tools', 'xml', 'xml2csv.py'), 'output.xml'])
