@@ -54,7 +54,8 @@ if __name__ == "__main__":
                          '-a', ', '.join([os.path.join(definitions.VEH_DESCRIPT_DIR_ABSOLUTE, 'vTypeDistributions.add.xml'),   # defines the vehicle type distribution (not really necessary)
                          os.path.join(definitions.DETECT_DIR_ABS, 'e2detect.add.xml')]),  # defines the detector file (not really necessary)
                          '-e', str(SIM_LENGTH),
-                         '--step-length', str(STEP_LENGTH)]
+                         '--step-length', str(STEP_LENGTH),
+                        '--emission-output', 'emissions.out.xml']
 
     # start (open) SUMO
     traci.start([sumoBinary] + command_line_list)
